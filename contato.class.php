@@ -63,12 +63,19 @@ class Contato {
     }
 
     // criando a atualizacao
-    public function editar($nome,$id){
-        $sql ="UPDATE contatos set nome = :nome where id = :id";
+    public function editar($nome,$email,$id){
+        if($this->existeEmail($email) == false){ // se nao existir esse email a gente altera
+        $sql ="UPDATE contatos set nome = :nome, email=:email where id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(':nome', $nome); // ele manda o nome
+        $sql->bindValue(':email', $email); // ele manda o nome
         $sql->bindValue(':id', $id); // ele manda o id
         $sql->execute();
+
+        return true;
+        }else{
+            return false; // quer dizer que o email nao foi alterado
+        }
     }
 /*
     public function excluirpeloEmail($email){
