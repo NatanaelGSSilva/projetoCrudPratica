@@ -27,8 +27,8 @@ $contato = new Contato();
 
     <th>
     
-    <a href="editar.php?id=<php echo $item['id']; ?>">[Editar]</a> 
-    <a href="excluir.php?id=<php echo $item['id']; ?>">[Excluir]</a>
+    <a href="editar.php?id=<?php echo $item['id']; ?>">[Editar]</a> 
+    <a href="excluir.php?id=<?php echo $item['id']; ?>">[Excluir]</a>
    
     
     </th>

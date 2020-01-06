@@ -66,8 +66,8 @@ class Contato {
     public function editar($nome,$id){
         $sql ="UPDATE contatos set nome = :nome where id = :id";
         $sql = $this->pdo->prepare($sql);
-        $sql->binValue(':nome', $nome); // ele manda o nome
-        $sql->binValue(':id', $id); // ele manda o id
+        $sql->bindValue(':nome', $nome); // ele manda o nome
+        $sql->bindValue(':id', $id); // ele manda o id
         $sql->execute();
     }
 /*

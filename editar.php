@@ -25,7 +25,7 @@ if(!empty($_GET['id'])){
 
 
 <form action ="editar_submit.php" method="POST">
-<input type="hidden" name = "id" valeu="<?php echo $info['id']; ?>">
+<input type="hidden" name = "id" value="<?php echo $info['id']; ?>">
 
 Nome:<br/>
 <input type="text" name="nome" value = "<?php echo $info['nome'] ?>"><br/><br/>
